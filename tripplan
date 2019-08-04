@@ -1,0 +1,60 @@
+import java.util.Scanner;
+public class ProjectPlanner {
+
+    public static void main(String[] args) {
+
+        System.out.println("Welcome To Vacation Planner!");
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("What is your Name?");
+        String name = input.nextLine();
+        System.out.println("Nice To Meet You" + " " + name + " ," + "Where Are You Travelling To?");
+        String city = input.nextLine();
+        System.out.println("Great!" + " " + city + " " + "sounds like a great trip");
+        System.out.println("**********");
+        travel();
+        System.out.println("**********");
+        time();
+        System.out.println("**********");
+        distance();
+        System.out.println("**********");
+
+    }
+
+    public static void travel() {
+        int x = 24;
+        int y = 3600;
+        Scanner input = new Scanner(System.in);
+        System.out.println("How Many Days Are You Going To Spend Travelling?");
+        int days = input.nextInt();
+        System.out.println("How Much Money,in USD,are you planning to spend?");
+        int amt = input.nextInt();
+        System.out.println("What is the 3 letter currency symbol of your destination?");
+        String sym = input.next();
+        System.out.println("How Many" + " " + "are there in 1 USD?");
+        int con = input.nextInt();
+        System.out.println("IF YOU ARE TRAVELLING FOR" + " " + days + " DAYS THAT IS THE SAME AS" + " " + (int) days * (int) x + " " + "hours" + " " + (int) days * (int) y + " " + "minutes");
+        System.out.println("IF YOUR ARE GOING TO SPEND " + " $" + amt + " " + "that means you can spend per day upto" + " " + "$" + (double) amt / (double) days + " " + "USD");
+        System.out.println("YOUR TOTAL BUDGET IN" + " " + sym + " " + "is" + " " + (double) amt * (double) con + ", " + "which per day is" + " " + sym + " "+(double) amt * (double) con / (double) days );
+
+    }
+
+    public static void time() {
+        int z = 12;
+        Scanner input = new Scanner(System.in);
+        System.out.println("What is the time difference,in hours,between your home and your destination?");
+        int diff = input.nextInt();
+        int a = z + diff;
+        System.out.println("That means when it is midnight at home it will be" + " " + diff +":00"+" "+ "in your travel destination" + "and when it is noon at home it will be" + " " + a + ":00");
+
+    }
+
+    public static void distance() {
+        double d = 0.621371;
+        Scanner input = new Scanner(System.in);
+        System.out.println("What is the square area of your destination country in km?");
+        int dist = input.nextInt();
+        System.out.println("In miles that is " + (double)dist * d);
+
+    }
+}
